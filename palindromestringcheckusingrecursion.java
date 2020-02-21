@@ -4,25 +4,21 @@ import java.io.*;
 
 class GFG {
 	public static void main (String[] args) {
-	  String str="aabaa";
-	  int b=str.length();
-	  int a=0;
-	  rec(str,a,b);
+		String str="abhinav";
+		recu(str);
 	}
-	static int rec(String str,int a,int b)
-	{
-	    if((a==b)&&(str.charAt(a)==str.charAt(b)))
-	    {
-	        System.out.println("Yes a palindrome string");
+	static int recu(String str){
+	    if(str.length()==0||str.length()==1){
+	        System.out.println("Yes a palindrome");
 	        return 0;
 	    }
-	    else if(a>b)
+	    if(str.charAt(0)==str.charAt(str.length()-1))
 	    {
-	        System.out.println("NOt a palindrome");
-	        return 0;
+	        return(recu(str.substring(1,str.length()-1)));
 	    }
-	    else{
-	        return(rec(str,a+1,b-1));
+	    else {
+	        System.out.println("Not a palindrome string");
+	        return 0;
 	    }
 	}
 }
